@@ -28,6 +28,7 @@ jobs:
       - image: circleci/php:7.2-cli
     steps:
       - checkout
+      - run: { name: "Install dependencies", command: sudo composer self-update && composer install -n --prefer-dist }
       - run:
           name: Static analysis
           command: |
